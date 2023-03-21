@@ -1,11 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DemoComponent, Child } from "./App";
+import Counter from "./components/Lifecycle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+)
+
 // root.render(
 //   <React.StrictMode>
 //     <App />
@@ -172,59 +180,59 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<TestComponent name='Mike' />);
 // TestFunction();
 
-function showTime() {
-  const myElement = (
-    <div className="App">
-      <h1>Welcome to Up-skilling World!</h1>
-      <h2>{new Date().toLocaleTimeString()}</h2>
-    </div>
-  );
+// function showTime() {
+//   const myElement = (
+//     <div className="App">
+//       <h1>Welcome to Up-skilling World!</h1>
+//       <h2>{new Date().toLocaleTimeString()}</h2>
+//     </div>
+//   );
 
-  root.render(myElement);
-}
+//   root.render(myElement);
+// }
 
-// setInterval(showTime, 1000)
+// // setInterval(showTime, 1000)
 
 
-class Clock extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      time: new Date().toLocaleTimeString(),
-    }
+// class Clock extends Component {
+//   constructor (props) {
+//     super(props)
+//     this.state = {
+//       time: new Date().toLocaleTimeString(),
+//     }
     
-  }
+//   }
 
-  tick() {
-    this.setState(
-      {
-        time: new Date().toLocaleTimeString()
-      }
-    )
-  }
+//   tick() {
+//     this.setState(
+//       {
+//         time: new Date().toLocaleTimeString()
+//       }
+//     )
+//   }
 
-  componentDidMount() {
-    this.tick = this.tick.bind(this);
-    this.timer = setInterval( this.tick
-    , 1000
-    )
-  }
+//   componentDidMount() {
+//     this.tick = this.tick.bind(this);
+//     this.timer = setInterval( this.tick
+//     , 1000
+//     )
+//   }
 
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
+//   componentWillUnmount() {
+//     clearInterval(this.timer);
+//   }
 
-  render() {
-    return(
-    <div className="App">
-      <h1>{this.props.greeting}</h1>
-      <h2>{this.state.time}</h2>
-    </div>
-    )
-  }
-}
+//   render() {
+//     return(
+//     <div className="App">
+//       <h1>{this.props.greeting}</h1>
+//       <h2>{this.state.time}</h2>
+//     </div>
+//     )
+//   }
+// }
 
-root.render(<Clock greeting = "Hello Up-skilling World!" />);
+// root.render(<Clock greeting = "Hello Up-skilling World!" />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
