@@ -7,11 +7,7 @@ import RouteSwitch from "./RouteSwitch";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <StrictMode>
-    <RouteSwitch />
-  </StrictMode>
-)
+root.render(<StrictMode>{RouteSwitch}</StrictMode>);
 
 // root.render(
 //   <React.StrictMode>
@@ -192,14 +188,13 @@ root.render(
 
 // // setInterval(showTime, 1000)
 
-
 // class Clock extends Component {
 //   constructor (props) {
 //     super(props)
 //     this.state = {
 //       time: new Date().toLocaleTimeString(),
 //     }
-    
+
 //   }
 
 //   tick() {
