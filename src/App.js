@@ -2,7 +2,7 @@ import "./App.css";
 import MyComponent from "./components/firstComponent";
 import { Component } from "react";
 import Counter from "./components/Lifecycle";
-
+import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -248,16 +248,31 @@ import { Link } from "react-router-dom";
 //   )
 // }
 
-const App = () => {
-  const [id,setId] = useState('test')
+// const App = () => {
+//   const [id,setId] = useState('test')
 
-  return (
-    <div>
-      <Link to={'./profile'}>
-        <h1>Hello from App</h1>
-      </Link>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <Link to={'./profile'}>
+//         <h1>Hello from App</h1>
+//       </Link>
+//     </div>
+//   );
+// };
+
+const App = () => {
+  const [heading, setHeading] = useState('Magnificent Monkeys');
+  
+  const clickHandler = () => {
+    setHeading('Radical Rhinos')
+  };
+
+  return(
+    <>
+      <button type="button" onClick={clickHandler}>Click Me</button>
+      <h1>{heading}</h1>
+    </>
+  )
+}
 
 export default App;
